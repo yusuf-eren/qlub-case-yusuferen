@@ -1,0 +1,1210 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/auth/signin": {
+      "post": {
+        "operationId": "AuthController_signIn",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignInDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SigninResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "operationId": "AuthController_signUp",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignUpDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignupResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/verify-otp": {
+      "post": {
+        "operationId": "AuthController_verifyToken",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerifyOtpResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/auth/resend-otp": {
+      "post": {
+        "operationId": "AuthController_resendOtp",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResendOtpResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/users/list": {
+      "post": {
+        "operationId": "UsersController_listUsers",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListUsersDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListUsersResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/users/search": {
+      "post": {
+        "operationId": "UsersController_searchUsers",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchUsersDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchUsersResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/users/update-role": {
+      "put": {
+        "operationId": "UsersController_createAdmin",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateRoleResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/users/update/{id}": {
+      "put": {
+        "operationId": "UsersController_updateRole",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminUpdateUserResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/users/update": {
+      "put": {
+        "operationId": "UsersController_update",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateUserResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/users/delete/{id}": {
+      "delete": {
+        "operationId": "UsersController_deleteUser",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/users/delete": {
+      "delete": {
+        "operationId": "UsersController_deleteMe",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/analytics/list": {
+      "post": {
+        "operationId": "AnalyticsController_list",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListAnalyticsDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAnalyticsResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/analytics/landing": {
+      "post": {
+        "operationId": "AnalyticsController_landing",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LandingDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LandingResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/analytics/reports": {
+      "get": {
+        "operationId": "AnalyticsController_reports",
+        "parameters": [
+          {
+            "name": "day",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "example": "2024-10-17",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reports"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "HealthController_check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/notifications": {
+      "get": {
+        "operationId": "NotificationsController_getNotifications",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "post": {
+        "operationId": "NotificationsController_createNotification",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateNotificationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/notifications/{id}": {
+      "delete": {
+        "operationId": "NotificationsController_deleteNotification",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Qlub Backoffice API",
+    "description": "The Qlub API for Backoffice Operations. User Management & Analytics Platform",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "SignInDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      },
+      "SigninResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "readOnly": true
+          },
+          "email": {
+            "type": "string",
+            "readOnly": true
+          },
+          "role": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "admin",
+              "user"
+            ]
+          },
+          "active": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "token",
+          "name",
+          "email",
+          "role",
+          "active"
+        ]
+      },
+      "SignUpDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "password"
+        ]
+      },
+      "SignupResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "readOnly": true
+          },
+          "email": {
+            "type": "string",
+            "readOnly": true
+          },
+          "role": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "admin",
+              "user"
+            ]
+          },
+          "active": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "token",
+          "name",
+          "email",
+          "role",
+          "active"
+        ]
+      },
+      "VerifyOtpDto": {
+        "type": "object",
+        "properties": {
+          "otp": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "otp"
+        ]
+      },
+      "VerifyOtpResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "readOnly": true
+          },
+          "email": {
+            "type": "string",
+            "readOnly": true
+          },
+          "role": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "admin",
+              "user"
+            ]
+          },
+          "active": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "token",
+          "name",
+          "email",
+          "role",
+          "active"
+        ]
+      },
+      "ResendOtpResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "message"
+        ]
+      },
+      "ListUsersFilterDto": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean",
+            "example": "true"
+          },
+          "role": {
+            "type": "string",
+            "example": "admin",
+            "enum": [
+              "admin",
+              "user"
+            ]
+          }
+        }
+      },
+      "ListUsersDto": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "number",
+            "example": "1"
+          },
+          "limit": {
+            "type": "number",
+            "example": "10"
+          },
+          "sort": {
+            "type": "string",
+            "example": "asc"
+          },
+          "sortBy": {
+            "type": "string",
+            "example": "id"
+          },
+          "filter": {
+            "example": {
+              "active": true,
+              "role": "admin"
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ListUsersFilterDto"
+              }
+            ]
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "role",
+          "active"
+        ]
+      },
+      "ListUsersResponse": {
+        "type": "object",
+        "properties": {
+          "totalPage": {
+            "type": "number",
+            "readOnly": true
+          },
+          "page": {
+            "type": "number",
+            "readOnly": true
+          },
+          "limit": {
+            "type": "number",
+            "readOnly": true
+          },
+          "users": {
+            "readOnly": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        },
+        "required": [
+          "totalPage",
+          "page",
+          "limit",
+          "users"
+        ]
+      },
+      "SearchUsersDto": {
+        "type": "object",
+        "properties": {
+          "search": {
+            "type": "string"
+          },
+          "page": {
+            "type": "number",
+            "example": "1"
+          },
+          "limit": {
+            "type": "number",
+            "example": "10"
+          },
+          "sort": {
+            "type": "string",
+            "example": "asc"
+          },
+          "sortBy": {
+            "type": "string",
+            "example": "id"
+          }
+        },
+        "required": [
+          "search"
+        ]
+      },
+      "SearchUsersResponse": {
+        "type": "object",
+        "properties": {
+          "totalPage": {
+            "type": "number",
+            "readOnly": true
+          },
+          "page": {
+            "type": "number",
+            "readOnly": true
+          },
+          "limit": {
+            "type": "number",
+            "readOnly": true
+          },
+          "users": {
+            "readOnly": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        },
+        "required": [
+          "totalPage",
+          "page",
+          "limit",
+          "users"
+        ]
+      },
+      "UpdateRoleDto": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "number"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userID",
+          "role"
+        ]
+      },
+      "UpdateRoleResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "readOnly": true
+          },
+          "user": {
+            "readOnly": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/User"
+              }
+            ]
+          }
+        },
+        "required": [
+          "message",
+          "user"
+        ]
+      },
+      "AdminUpdateUserResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "readOnly": true
+          },
+          "user": {
+            "readOnly": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/User"
+              }
+            ]
+          }
+        },
+        "required": [
+          "message",
+          "user"
+        ]
+      },
+      "UpdateUserDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "UpdateUserResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "readOnly": true
+          },
+          "user": {
+            "readOnly": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/User"
+              }
+            ]
+          }
+        },
+        "required": [
+          "message",
+          "user"
+        ]
+      },
+      "ListAnalyticsFilterDto": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "number",
+            "example": "true"
+          },
+          "event": {
+            "type": "string",
+            "example": "NEW_USER",
+            "enum": [
+              "FAILED_LOGIN_ATTEMPT",
+              "SUCCESSFUL_LOGIN",
+              "NEW_USER",
+              "UPDATED_USER"
+            ]
+          },
+          "userRole": {
+            "type": "string",
+            "example": "admin"
+          },
+          "startDate": {
+            "format": "date-time",
+            "type": "string",
+            "example": "2021-01-01T00:00:00.000Z"
+          },
+          "endDate": {
+            "format": "date-time",
+            "type": "string",
+            "example": "2021-01-01T00:00:00.000Z"
+          }
+        }
+      },
+      "ListAnalyticsDto": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "number",
+            "example": "1"
+          },
+          "limit": {
+            "type": "number",
+            "example": "10"
+          },
+          "sort": {
+            "type": "string",
+            "example": "asc"
+          },
+          "sortBy": {
+            "type": "string",
+            "example": "event"
+          },
+          "filter": {
+            "example": {
+              "event": "FAILED_LOGIN_ATTEMPT"
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ListAnalyticsFilterDto"
+              }
+            ]
+          }
+        }
+      },
+      "Analytics": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "number"
+          },
+          "event": {
+            "type": "string",
+            "enum": [
+              "FAILED_LOGIN_ATTEMPT",
+              "SUCCESSFUL_LOGIN",
+              "NEW_USER",
+              "UPDATED_USER"
+            ]
+          },
+          "status": {
+            "type": "number",
+            "enum": [
+              100,
+              101,
+              102,
+              103,
+              200,
+              201,
+              202,
+              203,
+              204,
+              205,
+              206,
+              300,
+              301,
+              302,
+              303,
+              304,
+              307,
+              308,
+              400,
+              401,
+              402,
+              403,
+              404,
+              405,
+              406,
+              407,
+              408,
+              409,
+              410,
+              411,
+              412,
+              413,
+              414,
+              415,
+              416,
+              417,
+              418,
+              421,
+              422,
+              424,
+              428,
+              429,
+              500,
+              501,
+              502,
+              503,
+              504,
+              505
+            ]
+          },
+          "method": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "required": [
+          "userID",
+          "event",
+          "status",
+          "method",
+          "user"
+        ]
+      },
+      "ListAnalyticsResponse": {
+        "type": "object",
+        "properties": {
+          "totalPage": {
+            "type": "number",
+            "readOnly": true
+          },
+          "page": {
+            "type": "number",
+            "readOnly": true
+          },
+          "limit": {
+            "type": "number",
+            "readOnly": true
+          },
+          "analytics": {
+            "readOnly": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Analytics"
+            }
+          }
+        },
+        "required": [
+          "totalPage",
+          "page",
+          "limit",
+          "analytics"
+        ]
+      },
+      "LandingDto": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "type": "string",
+            "enum": [
+              "NEW_USER",
+              "SUCCESSFUL_LOGIN",
+              "FAILED_LOGIN_ATTEMPT",
+              "UPDATED_USER",
+              "TOTAL_USERS"
+            ],
+            "default": [
+              "NEW_USER",
+              "SUCCESSFUL_LOGIN",
+              "FAILED_LOGIN_ATTEMPT",
+              "UPDATED_USER",
+              "TOTAL_USERS"
+            ]
+          }
+        }
+      },
+      "LandingResponse": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "readOnly": true,
+            "enum": [
+              "FAILED_LOGIN_ATTEMPT",
+              "NEW_USER",
+              "SUCCESSFUL_LOGIN",
+              "TOTAL_USERS"
+            ]
+          },
+          "total": {
+            "type": "number",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "type",
+          "total"
+        ]
+      },
+      "Reports": {
+        "type": "object",
+        "properties": {
+          "event": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          },
+          "date": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "event",
+          "count",
+          "date"
+        ]
+      },
+      "CreateNotificationDto": {
+        "type": "object",
+        "properties": {
+          "event": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "number"
+          },
+          "threshold": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "event",
+          "interval",
+          "threshold"
+        ]
+      }
+    }
+  }
+}
