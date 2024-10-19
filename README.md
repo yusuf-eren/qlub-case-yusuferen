@@ -14,9 +14,24 @@ docker-compose up --build
 
 Note: use Node Version 18 for avoiding version compatibility.
 
+#### Pre-requisites
+- Node.js
+- Redis
+- PostgreSQL
+
+Install
 ```
 npm i
+```
+
+Run build
+```
 npm run build
+npm run start:prod
+```
+
+Or run it as a development server
+```
 npm run start:dev
 ```
 
